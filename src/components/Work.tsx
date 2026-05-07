@@ -2,14 +2,13 @@ import "./styles/Work.css";
 import WorkImage from "./WorkImage";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useGSAP } from "@gsap/react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-gsap.registerPlugin(useGSAP);
+gsap.registerPlugin(ScrollTrigger);
 
 const Work = () => {
   const [activeProject, setActiveProject] = useState<any>(null);
-  useGSAP(() => {
+useEffect(() => {
   let translateX: number = 0;
 
   function setTranslateX() {
